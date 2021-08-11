@@ -1,0 +1,51 @@
+//明解Java 5-5
+import java.util.Scanner;
+class JiSuan{
+	public static void main(String[] args){
+		Scanner stdIn = new Scanner(System.in);
+		System.out.print("a:");
+		int a = stdIn.nextInt();
+		System.out.print("b:");
+		int b = stdIn.nextInt();
+		System.out.print("c:");
+		int c = stdIn.nextInt();
+
+		System.out.println("合计值为：" + (a + b + c));
+		System.out.println("平均值为：" + (double)(a + b + c) / 3);
+	}
+}
+
+//明解Java 5-6
+class XianShi{
+	public static void main(String[] args){
+		Scanner stdIn = new Scanner(System.in);
+
+		System.out.println("  float        int   \n" + "---------------------");
+
+		float x = 0.0f;
+		int i = 0;
+
+		while(i <= 1000){
+			float j = (float)i / 1000;
+			System.out.printf("%1.7f", x);
+			System.out.print("   ");
+			System.out.printf("%1.7f\n", j);
+			x +=0.001f;
+			i++;
+		}
+	}
+}
+
+//明解Java 5-7
+class PingFang{
+	public static void main(String[] args){
+		Scanner stdIn = new Scanner(System.in);
+		float square;
+
+		for(int i = 0; i <= 1000; i++){
+			float x = (float)i / 1000;
+			square = x * x;
+			System.out.println("x = " + x + "，" + "x * x =" + square);
+		}
+	}
+}
