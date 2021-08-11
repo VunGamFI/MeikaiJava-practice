@@ -1,0 +1,198 @@
+//明解Java 3-7
+import java.util.Scanner;
+class ZhengChu{
+	public static void main(String[] args){
+		Scanner stdIn = new Scanner(System.in);
+		System.out.print("整数：");
+		int a = stdIn.nextInt();
+		if(a > 0){
+			if(a % 3 != 0){
+				if(a % 3 == 1)
+					System.out.println("该值除于3余1。");
+				else
+					System.out.println("该值除于3余2。");
+			}
+			else
+				System.out.println("该值可以被3整除。");
+		}
+		else
+			System.out.println("该值不是正数");
+	}
+}
+
+//明解Java 3-8
+import java.util.Scanner;
+class ChengJi{
+	public static void main(String[] args){
+		Scanner stdIn = new Scanner(System.in);
+		System.out.print("成绩：");
+		int x = stdIn.nextInt();
+		if(x >= 0 && x <= 59)
+			System.out.println("不及格");
+		else if(x >= 60 && x <= 69)
+			System.out.println("及格");
+		else if(x >= 70 && x <= 79)
+			System.out.println("良");
+		else if(x >= 80 && x <= 100)
+			System.out.println("优");
+	}
+}
+
+//明解Java 3-10
+import java.util.Scanner;
+class BiJiao{
+	public static void main(String[] args){
+		Scanner StdIn = new Scanner(System.in);
+		System.out.print("A：");
+		int A = StdIn.nextInt();
+		System.out.print("B：");
+		int B = StdIn.nextInt();
+		System.out.println("A和B的差值是" + (A > B ? A - B : B - A) + "。");		
+	}
+}
+
+//明解Java 3-11
+import java.util.Scanner;
+class BiJiao{
+	public static void main(String[] args){
+		Scanner StdIn = new Scanner(System.in);
+		System.out.print("A：");
+		int A = StdIn.nextInt();
+		System.out.print("B：");
+		int B = StdIn.nextInt();
+
+		int max = A > B ? A : B;
+		int min = A < B ? A : B;
+
+		if(max - min <= 10)
+			System.out.println("它们的差值小于等于10");
+		else
+			System.out.println("它们的差值大于等于11");
+	}
+}
+
+//明解Java 3-13
+import java.time.chrono.MinguoChronology;
+import java.util.Scanner;
+class Mid3{
+	public static void main(String[] args){
+		Scanner stdIn = new Scanner(System.in);
+		System.out.print("A：");
+		int A = stdIn.nextInt();
+		System.out.print("B：");
+		int B = stdIn.nextInt();
+		System.out.print("C：");
+		int C = stdIn.nextInt();
+		
+		if(A >= B)
+			if(A <= C)
+				System.out.println("中间值是" + A +"。");
+			else if(B >= C)
+				System.out.println("中间值是" + B +"。");
+			else
+				System.out.println("中间值是" + C +"。");
+		else if(B <= C)
+			System.out.println("中间值是" + B +"。");
+			else if(A >= C)
+				System.out.println("中间值是" + A +"。");
+			else
+				System.out.println("中间值是" + C +"。");
+
+	}
+}
+
+//明解Java 3-14
+import java.util.Scanner;
+class BiJiao{
+	public static void main(String[] args){
+		Scanner stdIn = new Scanner(System.in);
+		System.out.print("A：");
+		int A = stdIn.nextInt();
+		System.out.print("B：");
+		int B = stdIn.nextInt();
+		//int min, max;	变量声明位置不能在此处
+		
+		if(A == B)
+			System.out.println("两个值相等");
+		else {
+			int min, max;	//变量声明位置
+			if(A > B){
+				min = B;
+				max = A;
+			}
+			else{
+				min = A;
+				max = B;
+			}
+		System.out.println("较小的值是" + min + "。");
+		System.out.println("较大的值是" + max + "。");
+		}
+	}
+}
+
+//明解Java 3-16
+import java.util.Scanner;
+class PaiXu{
+	public static void main(String[] args){
+		Scanner stdIn = new Scanner(System.in);
+		System.out.print("A：");
+		int A = stdIn.nextInt();
+		System.out.print("B：");
+		int B = stdIn.nextInt();
+		System.out.print("C：");
+		int C = stdIn.nextInt();
+		
+		int Max1 = A > B? A : B;
+		int Max = Max1 > C? Max1 : C;
+		
+		int Min1 = A < B? A : B;
+		int Min = Min1 < C? Min1 : C;
+
+		int Mid;
+
+		if(A >= B){
+			if(A <= C)
+			Mid = A;
+			else if(B >= C)
+				Mid = B;
+			else
+				Mid = C;
+			}
+		else{
+			if(B <= C)
+				Mid = B;
+			else if(A >= C)
+				Mid = A;
+			else
+				Mid = C;
+		}
+		System.out.println("从小到大排序为：" + Min +"<" + Mid + "<" + Max);
+	}
+}
+
+//明解Java 3-18
+import java.util.Scanner;
+class YueFen{
+	public static void main(String[] args){
+		Scanner stdIn = new Scanner(System.in);
+		System.out.print("月份：");
+		int x = stdIn.nextInt();
+
+		switch(x){
+			case 3 :
+			case 4 :
+			case 5 : System.out.println("春"); break;
+
+			case 6 :
+			case 7 :
+			case 8 : System.out.println("夏"); break;
+
+			case 9 :
+			case 10 :
+			case 11 : System.out.println("秋"); break;
+
+			default : if(x == 12 || x == 1 || x == 2)
+						System.out.println("冬"); break;
+		}
+	}
+}
