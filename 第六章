@@ -323,7 +323,7 @@ class YueFen{
 //明解Java 6-15
 import java.util.Scanner;
 import java.util.Random;
-class YueFen{
+class XingQi{
 	public static void main(String[] args){
 		Scanner stdIn = new Scanner(System.in);
 		Random rand = new Random();
