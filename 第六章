@@ -365,3 +365,118 @@ class XingQi{
 		}while(retry == 1);
 	}
 }
+
+//明解Java 6-16
+import java.util.Scanner;
+class JuZheng{
+	public static void main(String[] args){
+		Scanner stdIn = new Scanner(System.in);
+
+		int[][] a = new int[4][3];
+		int[][] b = new int[3][4];
+		int[][] c = new int[4][4];	
+
+		for(int i = 0; i < 4; i++){
+			for(int j = 0; j < 3; j++){
+				System.out.print("a[" + i + "][" + j + "] = ");
+				a[i][j] = stdIn.nextInt();
+			}
+		}
+		for(int i = 0; i < 3; i++){
+			for(int j = 0; j < 4; j++){
+				System.out.print("b[" + i + "][" + j + "] = ");
+				b[i][j] = stdIn.nextInt();
+			}
+		}
+		
+		for(int i = 0; i < 4; i++){
+			for(int j = 0; j < 4; j++){
+				for(int k = 0; k < 3; k++)
+					c[i][j] += a[i][k] * b[k][j];
+			}
+		}
+		System.out.println("矩阵C");
+		for(int i = 0; i < 4; i++){
+			for(int j = 0; j < 4; j++)
+				System.out.printf("%5d", c[i][j]);
+			System.out.println();
+		}
+	}
+}
+
+//明解Java 6-18
+import java.util.Scanner;
+class ShuZu{
+	public static void main(String[] args){
+		Scanner stdIn = new Scanner(System.in);
+		System.out.print("数组行数：");
+		int x = stdIn.nextInt();
+		int[][] c = new int[x][];
+		int[] y = new int[x];
+
+		for(int i = 0; i < x; i++){
+			System.out.print("第" + (i + 1) + "个数组列数：");
+			y[i] = stdIn.nextInt();
+			c[i] = new int[y[i]];
+		}
+
+		for(int i = 0; i < x; i++){
+			for(int j = 0; j < c[i].length; j++){
+				System.out.print("数组元素值分别为：");
+				c[i][j] = stdIn.nextInt();
+			}
+		}
+
+		for(int i = 0; i < x; i++){
+			for(int j = 0; j < c[i].length; j++)
+				System.out.printf("%3d", c[i][j]);
+			System.out.println();
+		}
+	}
+}
+
+//明解Java 6-19
+import java.util.Scanner;
+class ChengJi{
+	public static void main(String[] args){
+		Scanner stdIn = new Scanner(System.in);
+
+		System.out.print("班级数：");
+		int banji = stdIn.nextInt();
+		int sum1 = 0;
+		double avg1 = 0;
+		int[][] hao = new int[banji][];
+		int[] sum = new int[banji];
+		double[] avg = new double[banji];
+
+		for(int i = 0; i < banji; i++){
+			System.out.print((i + 1) + "班人数：");
+			int x = stdIn.nextInt();
+			hao[i] = new int[x];
+			for(int j = 0; j < x; j++){
+				System.out.print((i + 1) + "班" + (j + 1) + "号的分数：");
+				hao[i][j] = stdIn.nextInt();
+			}
+		}
+		System.out.println();
+
+		for(int i = 0; i < banji; i++){
+			for(int j = 0; j < hao[i].length; j++)
+				sum[i] += hao[i][j];
+			avg[i] = (double)sum[i] / (hao[i].length);
+			sum1 += sum[i];
+			avg1 += avg[i];
+		}
+
+		System.out.println("  班  |    总分     平均分   ");
+		System.out.println("------+--------------------");
+		for(int i = 0; i < banji; i++){
+			System.out.print(" " + (i + 1) + " 班 |    " + sum[i] + "      ");
+			System.out.printf("%.1f", avg[i]);
+			System.out.println();
+		}
+		System.out.println("------+--------------------");
+		System.out.print(" 合计 |    " + sum1 + "      ");
+		System.out.printf("%.1f", avg1 / banji);	
+	}
+}
