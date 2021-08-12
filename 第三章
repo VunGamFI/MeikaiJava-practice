@@ -72,7 +72,6 @@ class BiJiao{
 }
 
 //明解Java 3-13
-import java.time.chrono.MinguoChronology;
 import java.util.Scanner;
 class Mid3{
 	public static void main(String[] args){
