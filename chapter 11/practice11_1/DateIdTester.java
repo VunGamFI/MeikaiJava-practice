@@ -1,6 +1,6 @@
 package practice11_1;
 import practice11_1.id.DateId;
-public class DateIdTester{
+class DateIdTester{
     public static void main(String[] args){
         DateId a = new DateId();
         DateId b = new DateId();
