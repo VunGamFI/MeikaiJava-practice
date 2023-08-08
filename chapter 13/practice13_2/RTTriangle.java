@@ -9,7 +9,6 @@ public abstract class RTTriangle extends Shape{
 
     public int getWidth() { return width; }
 
-
     public String toString(){
         return "RTTriangle(width: " + width + ")";
     }
